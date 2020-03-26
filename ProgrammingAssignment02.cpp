@@ -98,7 +98,7 @@ int main()
 	cout << dict.getHeight();
 	cout << "\n";
 
-	ifstream infile;
+	/*ifstream infile;
 	string filename;
 	filename = "book.txt";
 	string bookword;
@@ -168,7 +168,7 @@ int main()
 	cout << "There are ";
 	cout << skipped;
 	cout << " words not checked.";
-	cout << "\n";
+	cout << "\n";*/
 
 	return 0;
 }
