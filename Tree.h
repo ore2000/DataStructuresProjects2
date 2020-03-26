@@ -77,28 +77,23 @@ public:
 
 	void insert(T item, node<T> *&root)
 	{
-		    if (item == "") return;
-		    T dataItem;
+		    //if (item == "") return;
 			if (root == nullptr)
 			{
 				root = new node<T>(item);
 				height++;
 			}
+			else if (item < root->data)
+			{
+				insert(item, root->left);
+			}
+			else if (item > root->data)
+			{
+				insert(item, root->right);
+			}
 			else
 			{
-				dataItem = root->data;
-				if (item < dataItem)
-				{
-					insert(item, root->left);
-				}
-				else if (item > dataItem)
-				{
-					insert(item, root->right);
-				}
-				else
-				{
 					
-				}
 			}
 	}
 
@@ -211,7 +206,7 @@ public:
 		else
 		{
 		   insert(item, headMal);
-		   }
+		}
 		
 	}
 	void remove(T item, node<T>*& root)
@@ -432,5 +427,6 @@ public:
 	{
 		return height;
 	}
+	
 };
 #endif

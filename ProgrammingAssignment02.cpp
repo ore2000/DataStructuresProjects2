@@ -94,11 +94,11 @@ int main()
 		cleanWord(readWord);
 		dict.insert(readWord);
 	}
-	cout << "Size of linked List: ";
+	cout << "Number of nodes in Tree: ";
 	cout << dict.getHeight();
 	cout << "\n";
 
-	/*ifstream infile;
+	ifstream infile;
 	string filename;
 	filename = "book.txt";
 	string bookword;
@@ -108,13 +108,14 @@ int main()
 	{
 		timer.Start();
 		infile >> bookword;
-
+		
 		while (!infile.eof())
 		{
-			cleanWord(bookword);
+			cleanWord(bookword); 
+			cout<< bookword << "\n";
 			if (bookword.compare("") == 0)
 			{
-
+;
 			}
 			else  if (!(isalpha(bookword[0])))
 			{
@@ -124,7 +125,7 @@ int main()
 			{
 				correctlySpelled++;
 			}
-			else
+			else 
 			{
 				missPelled.push_back(bookword);
 				wrongSpelling++;
@@ -168,7 +169,7 @@ int main()
 	cout << "There are ";
 	cout << skipped;
 	cout << " words not checked.";
-	cout << "\n";*/
+	cout << "\n";
 
 	return 0;
 }
