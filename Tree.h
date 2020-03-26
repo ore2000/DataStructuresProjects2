@@ -87,27 +87,23 @@ public:
 			else
 			{
 				dataItem = root->data;
-				if (item[1] < dataItem[1])
+				if (item < dataItem)
 				{
-					cout << dataItem << "right \n";
 					insert(item, root->left);
 				}
-				else if (item[1] > dataItem[1])
+				else if (item > dataItem)
 				{
-					cout << dataItem << "left \n";
 					insert(item, root->right);
 				}
 				else
 				{
-					cout << dataItem << "right \n";
-					insert(item, root->right);
+					
 				}
 			}
 	}
 
 	void insert(T item)
 	{
-		//cout << " called Insert \n";
 		if (item[0] == 'a')
 		{
 			insert(item, heada);
@@ -378,11 +374,11 @@ public:
 		{
 			return nullptr;
 		}
-		else if (item[1] < dataItem[1])
+		else if (item < dataItem)
 		{
 			find(item, root->left);
 		}
-		else if (item[1] > dataItem[1])
+		else if (item > dataItem)
 		{
 			find(item, root->right);
 		}
