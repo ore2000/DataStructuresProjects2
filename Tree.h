@@ -255,6 +255,7 @@ public:
 			remove(root->data, root->right);
 		}
 	}
+
 	node<T>* find(T item)
 	{
 		if (item[0] == 'a')
@@ -376,11 +377,11 @@ public:
 		}
 		else if (item < dataItem)
 		{
-			find(item, root->left);
+			return find(item, root->left);
 		}
 		else if (item > dataItem)
 		{
-			find(item, root->right);
+			return find(item, root->right);
 		}
 		else
 		{
