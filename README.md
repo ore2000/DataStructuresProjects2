@@ -7,7 +7,7 @@ section: 10
 
 Competing: YES 
 
-Best run time: 1.99308 seconds on the Hive machine
+Best run time: 1.94421 seconds on the Hive machine
 
 How to compile on linux: g++ Programmingassingment02.cpp
 
