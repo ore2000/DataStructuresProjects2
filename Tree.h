@@ -1,6 +1,6 @@
 #pragma once
 #include "nodeObj.h"
-#include<iostream>
+
 using namespace std;
 #ifndef TREE
 #define TREE
@@ -38,10 +38,10 @@ public:
 	node<T>* headz;
 	node<T>* headMal;
 
-	long double height = 0;
-	long double foundComp = 0;
-	long double notFoundComp = 0;
-	long double compares = 0;
+	int  height = 0;
+	long double foundComp = 0.0;
+	long double notFoundComp = 0.0;
+	long double compares = 0.0;
 
 
 	tree()
@@ -419,6 +419,7 @@ public:
 		}
 		return findMin(root->right);
 	}
+
 	void clear(node<T>* root)
 	{
 		if (root == nullptr)

@@ -74,8 +74,8 @@ vector<string> readDict()
 
 int main()
 {
-	float correctlySpelled = 0.0;
-	float wrongSpelling = 0.0;
+	long double correctlySpelled = 0.0;
+	long double  wrongSpelling = 0.0;
 	int skipped = 0;
 	float foundAvg = 0.0;
 	float notFoundAvg = 0.0;
@@ -169,6 +169,6 @@ int main()
 	cout << skipped;
 	cout << " words not checked.";
 	cout << "\n";
-	system("pause");
+	
 	return 0;
 }
