@@ -11,5 +11,5 @@ Best run time: 1.94421 seconds on the Hive machine
 
 How to compile on linux: g++ Programmingassingment02.cpp
 
-Anything that doesn't work: Everuthing works
+Anything that doesn't work: Everything works
 
