@@ -112,7 +112,6 @@ int main()
 		while (!infile.eof())
 		{
 			cleanWord(bookword);
-			cout << bookword << "\n";
 			if (bookword.compare("") == 0)
 			{
 				;
@@ -170,6 +169,6 @@ int main()
 	cout << skipped;
 	cout << " words not checked.";
 	cout << "\n";
-
+	system("pause");
 	return 0;
 }

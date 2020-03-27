@@ -41,8 +41,8 @@ public:
 	long double height = 0;
 	long double foundComp = 0;
 	long double notFoundComp = 0;
-	int compares = 0;
-	bool condition = false;
+	long double compares = 0;
+
 
 	tree()
 	{
@@ -77,7 +77,7 @@ public:
 
 	void insert(T item, node<T> *&root)
 	{
-		//if (item == "") return;
+		if (item == "") return;
 		if (root == nullptr)
 		{
 			root = new node<T>(item);
@@ -365,23 +365,33 @@ public:
 
 	node<T>* find(T item, node<T>* root)
 	{
-		T dataItem = root->data;
-		if (dataItem.compare(item) != 0)
+		T dataItem;
+		if (root == nullptr)
 		{
+			notFoundComp += compares;
+			compares = 0;
 			return nullptr;
-		}
-		else if (item < dataItem)
-		{
-			return find(item, root->left);
-		}
-		else if (item > dataItem)
-		{
-			return find(item, root->right);
 		}
 		else
 		{
-			return root;
+			compares++;
+			dataItem = root->data;
+			if (item.compare(dataItem) < 0)
+			{
+				return find(item, root->left);
+			}
+			else if (item.compare(dataItem) > 0)
+			{
+				return find(item, root->right);
+			}
+			else
+			{
+				foundComp += compares;
+				compares = 0;
+				return root;
+			}
 		}
+		
 	}
 
 	node<T>* findMin(node<T>* root)
