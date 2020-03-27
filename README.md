@@ -3,7 +3,7 @@ Program #2
 COSC 2030
 
 Name: Oreoluwa Adeola Babatunde
-section: 
+section: 10
 
 Competing: YES 
 
