@@ -77,24 +77,24 @@ public:
 
 	void insert(T item, node<T> *&root)
 	{
-		    //if (item == "") return;
-			if (root == nullptr)
-			{
-				root = new node<T>(item);
-				height++;
-			}
-			else if (item < root->data)
-			{
-				insert(item, root->left);
-			}
-			else if (item > root->data)
-			{
-				insert(item, root->right);
-			}
-			else
-			{
-					
-			}
+		//if (item == "") return;
+		if (root == nullptr)
+		{
+			root = new node<T>(item);
+			height++;
+		}
+		else if (item < root->data)
+		{
+			insert(item, root->left);
+		}
+		else if (item > root->data)
+		{
+			insert(item, root->right);
+		}
+		else
+		{
+
+		}
 	}
 
 	void insert(T item)
@@ -201,13 +201,13 @@ public:
 		}
 		else if (item[0] == 'z')
 		{
-		insert(item, headz);
+			insert(item, headz);
 		}
 		else
 		{
-		   insert(item, headMal);
+			insert(item, headMal);
 		}
-		
+
 	}
 	void remove(T item, node<T>*& root)
 	{
@@ -366,7 +366,7 @@ public:
 	node<T>* find(T item, node<T>* root)
 	{
 		T dataItem = root->data;
-		if (root == nullptr)
+		if (dataItem.compare(item) != 0)
 		{
 			return nullptr;
 		}
@@ -396,12 +396,12 @@ public:
 		}
 		return findMin(root->left);
 	}
-	
+
 	node<T>* findMax(node<T>* root)
 	{
 		if (root == nullptr)
 		{
-			return;
+			return nullptr;
 		}
 		else if (root->right == nullptr)
 		{
@@ -413,7 +413,7 @@ public:
 	{
 		if (root == nullptr)
 		{
-			return;
+			return ;
 		}
 		else
 		{
@@ -427,6 +427,6 @@ public:
 	{
 		return height;
 	}
-	
+
 };
 #endif

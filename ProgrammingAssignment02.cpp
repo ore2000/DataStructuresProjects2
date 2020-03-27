@@ -108,14 +108,14 @@ int main()
 	{
 		timer.Start();
 		infile >> bookword;
-		
+
 		while (!infile.eof())
 		{
-			cleanWord(bookword); 
-			cout<< bookword << "\n";
+			cleanWord(bookword);
+			cout << bookword << "\n";
 			if (bookword.compare("") == 0)
 			{
-;
+				;
 			}
 			else  if (!(isalpha(bookword[0])))
 			{
@@ -125,7 +125,7 @@ int main()
 			{
 				correctlySpelled++;
 			}
-			else 
+			else
 			{
 				missPelled.push_back(bookword);
 				wrongSpelling++;
