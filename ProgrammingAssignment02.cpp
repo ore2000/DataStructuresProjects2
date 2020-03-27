@@ -31,11 +31,11 @@ void cleanWord(string& word)
 		}
 		else if (isdigit(word[i]))
 		{
-			word[i] = word[i];
+		
 		}
 		else if (comp == apos)
 		{
-			word[i] = word[i];
+		
 		}
 		else
 		{
@@ -114,7 +114,7 @@ int main()
 			cleanWord(bookword);
 			if (bookword.compare("") == 0)
 			{
-				;
+				
 			}
 			else  if (!(isalpha(bookword[0])))
 			{
