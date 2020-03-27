@@ -2,14 +2,14 @@ Program #2
 
 COSC 2030
 
-Name:
+Name: Oreoluwa Adeola Babatunde
 section: 
 
-Competing: YES or NO
+Competing: YES 
 
-Best run time:
+Best run time: 1.99308 seconds on the Hive machine
 
-How to compile on linux: 
+How to compile on linux: g++ Programmingassingment02.cpp
 
-Anything that doesn't work:
+Anything that doesn't work: Everuthing works
 
