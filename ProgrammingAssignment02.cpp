@@ -94,8 +94,8 @@ int main()
 		cleanWord(readWord);
 		dict.insert(readWord);
 	}
-	cout << "Number of nodes in Tree: ";
-	cout << dict.getHeight();
+	cout << "dictionary size  ";
+	cout << dict.getNodes();
 	cout << "\n";
 
 	ifstream infile;

@@ -9,7 +9,7 @@ template<class T>
 class tree
 {
 public:
-
+//root variables for words that start with different letters
 	node<T>* heada;
 	node<T>* headb;
 	node<T>* headc;
@@ -37,13 +37,13 @@ public:
 	node<T>* heady;
 	node<T>* headz;
 	node<T>* headMal;
-
-	int  height = 0;
+//Tree class variables
+	int  numberOfNodes = 0;
 	long double foundComp = 0.0;
 	long double notFoundComp = 0.0;
 	long double compares = 0.0;
 
-
+//constructor
 	tree()
 	{
 		heada = nullptr;
@@ -74,20 +74,20 @@ public:
 		headz = nullptr;
 		headMal = nullptr;
 	}
-
+//insert function
 	void insert(T item, node<T> *&root)
 	{
 		if (item == "") return;
 		if (root == nullptr)
 		{
 			root = new node<T>(item);
-			height++;
+			numberOfNodes++;
 		}
-		else if (item < root->data)
+		else if (item.compare( root->data)<0)
 		{
 			insert(item, root->left);
 		}
-		else if (item > root->data)
+		else if (item.compare(root->data)>0)
 		{
 			insert(item, root->right);
 		}
@@ -96,7 +96,7 @@ public:
 
 		}
 	}
-
+//insert function to decide what tree to add the new word to.
 	void insert(T item)
 	{
 		if (item[0] == 'a')
@@ -209,6 +209,7 @@ public:
 		}
 
 	}
+//remove function
 	void remove(T item, node<T>*& root)
 	{
 		if (item == "") return;
@@ -217,11 +218,11 @@ public:
 		{
 			return;
 		}
-		else if (item[1] < dataItem[1])
+		else if (item.compare(dataItem) <0)
 		{
 			remove(item, root->left);
 		}
-		else if (item[1] > dataItem[1])
+		else if (item.compare(dataItem) > 0)
 		{
 			remove(item, root->right);
 		}
@@ -230,7 +231,7 @@ public:
 			node<T>* oldNode;
 			if (root->left == nullptr)
 			{
-				height--;
+				numberOfNodes--;
 				oldNode = root;
 				root = root->right;
 				delete oldNode;
@@ -238,7 +239,7 @@ public:
 			}
 			else if (root->right == nullptr)
 			{
-				height--;
+				numberOfNodes--;
 				oldNode = root;
 				root = root->left;
 				delete oldNode;
@@ -250,7 +251,7 @@ public:
 			remove(root->data, root->right);
 		}
 	}
-
+//Find function to decide what tree to go into
 	node<T>* find(T item)
 	{
 		if (item[0] == 'a')
@@ -362,7 +363,7 @@ public:
 			return find(item, headMal);
 		}
 	}
-
+//find function
 	node<T>* find(T item, node<T>* root)
 	{
 		T dataItem;
@@ -419,7 +420,7 @@ public:
 		}
 		return findMin(root->right);
 	}
-
+//used to delete a node and its children
 	void clear(node<T>* root)
 	{
 		if (root == nullptr)
@@ -431,12 +432,13 @@ public:
 			clear(root->left);
 			clear(root->right);
 			delete(root);
+			numberOfNodes--;
 		}
 	}
 
-	int getHeight()
+	int getNodes()
 	{
-		return height;
+		return numberOfNodes;
 	}
 
 };
